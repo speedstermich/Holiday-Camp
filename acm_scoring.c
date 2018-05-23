@@ -2,10 +2,16 @@
 
 #define MAX_STRING 20
 
+struct Team{
+	char univ[MAX_STRING];
+	char name[MAX_STRING];
+};
+
+
 int main(int argc, char const *argv[]) {
 	int team, count = 0;
 	char univ[MAX_STRING], name[MAX_STRING];
-	int i;
+	//int i;
 	scanf("%d", &team);
 	while(count != team)
 	{
