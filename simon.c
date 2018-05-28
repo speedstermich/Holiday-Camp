@@ -1,18 +1,22 @@
-#include "string.h"
-#include "stdio.h"
+#include <stdio.h>
+#include <string.h>
 
-#define SIMON_SAYS "simon says "
-#define SIMON_LENGTH 11
-#define MAX_BUFFER 101
+#define MAX 1000
+#define pattern "simon says"
+#define pattern1 "Simon says"
 
-int main()
-{
-    int n;
-    scanf("%d", &n);
-    while (n-- > 0)
-    {
-        char buffer[MAX_BUFFER];
-        scanf(" %[^\n]", buffer);
-        if (!strncmp(buffer, SIMON_SAYS, SIMON_LENGTH)) printf("%s\n", buffer + SIMON_LENGTH);
-    }
+int main(int argc, char const *argv[]) {
+	int count;
+	char input[MAX];
+
+	scanf("%d", &count);
+	while(count-- > 0)
+	{
+		scanf(" %[^\n]", input);
+		if( (strncmp(input, pattern, 10)) == 0  || (strncmp(input, pattern1, 10)) == 0 )
+			printf("%s\n", input + 11 );
+		//else
+			//printf("\n");
+	}
+	return 0;
 }

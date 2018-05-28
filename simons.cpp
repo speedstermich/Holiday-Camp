@@ -5,13 +5,13 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-	int count;
+	int count, i;
   	string input;
 	//char compare[] = "Simon says";
 
 	std::cin>>count;
 	getline(cin, input);
-	while (count-- > 0)
+	for (i = 0; i < count; i++)
 	{
 		getline(cin,input);
 		if(input.substr(0, 10).compare("simon says") == 0 || input.substr(0, 10).compare("Simon says") == 0)
