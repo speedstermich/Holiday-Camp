@@ -28,7 +28,7 @@ void SelectionSort(int arr[], int n)
 //using namespace std;
 int main()
 {
-		int n,a[4],n1,n2;
+		int n, a[4], n1, n2;
 		scanf("%d",&n);
 		int s=1;
 
