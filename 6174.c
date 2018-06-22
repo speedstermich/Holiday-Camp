@@ -1,48 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 
-int all_same(int num)
+void swap(int* a, int* b)
 {
-	char s[8];
-	sprintf(s, "%d", num);
-	return s[0] == s[1] && s[1] == s[2] && s[2] == s[3];
+    int t = *a;
+    *a = *b;
+    *b = t;
+   //++count;
 }
-int k_trans(int num)
-{
-	int i;
-	char rising[8], falling[8] = {0};
 
-	sprintf(rising, "%04d", num);
-	qsort(rising, 0, 8);
-	//sort_str(rising);
-	//qsort(rising, size_t __nmemb, size_t __size, __compar_fn_t __compar)
-	//qsort(rising, 4, 1, comp ());
-	for (i = 0; i < 4; i++) {
-		falling[i] = rising[3 - i];
-	return atoi(falling) - atoi(rising);
+void SelectionSort(int arr[], int n)
+{
+	int i, j, min_idx;
+    	for (i = 0; i < n-1; i++)
+    	{
+		min_idx = i;
+		for (j = i+1; j < n; j++)
+		{
+			//++count;
+			if (arr[j] < arr[min_idx])
+			{
+				min_idx = j;
+			}
+		}
+		swap(&arr[min_idx], &arr[i]);
 	}
 }
-
-/*void sort_str (char rise)
+//using namespace std;
+int main()
 {
-	qsort(rise, 0, 8);
-}*/
-int comp(const char *v1, const char *v2)
-{
-	return *v1 - *v2;
-}
+		int n,a[4],n1,n2;
+		scanf("%d",&n);
+		int s=1;
 
-int main(int argc, char const *argv[]) {
-	int i, num;
-
-	if(scanf("%d", &num) != 1 || num > 9999 || num < 1000 || all_same(num) )
-	{
-		puts("-1");
-		return 1;
-	}
-	for (i = 0; num != 6174; i++)
-		num = k_trans(num);
-	printf("%d\n", i);
-	return 0;
+		while(n!=6174)
+		{
+			a[0]=n%10;
+			a[1]=n/10%10;
+			a[2]=n/100%10;
+			a[3]=n/1000;
+			SelectionSort(a,4);
+			n1 = 1000*a[3]+100*a[2]+10*a[1]+a[0];
+			n2 = 1000*a[0]+100*a[1]+10*a[2]+a[3];
+			n = n1-n2;
+			s++;
+		}
+	printf("%d %d",s, n);
 }
