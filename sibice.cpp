@@ -10,7 +10,6 @@ int main(int argc, char const *argv[]) {
 
 	cin >> number;
 
-
 	while()
 	{
 
