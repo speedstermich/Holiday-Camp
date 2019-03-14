@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 void swap(int* a, int* b)
@@ -11,8 +12,8 @@ void swap(int* a, int* b)
 void SelectionSort(int arr[], int n)
 {
 	int i, j, min_idx;
-    	for (i = 0; i < n-1; i++)
-    	{
+  for (i = 0; i < n-1; i++)
+  {
 		min_idx = i;
 		for (j = i+1; j < n; j++)
 		{
